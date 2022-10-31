@@ -46,6 +46,6 @@ def index():
     form9 = CalculatorForm()
     if form9.submit9.data and form9.validate_on_submit():
         flash(cal(form9.calculator_str.data))
-    forms = [form2, form6, form5, form3, form8, form1, form4, form7]
+    forms = [form2, form6, form5, form3, form8, form1, form4, form7, form9]
     return render_template('index.html', forms=forms)
 
