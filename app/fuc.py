@@ -60,3 +60,12 @@ def BinStr2HexStr(bin_str):
 def Dec2HexStr(n):
     # bin_str = bin_str.split(' ')[0]
     return format(n, 'x')
+
+
+def cal(calculator_str):
+    try:
+        import random
+        import math
+        return eval(calculator_str)
+    except:
+        return '您输入的有误'

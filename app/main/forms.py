@@ -28,8 +28,8 @@ class UploadForm(FlaskForm):
 
 class CalculatorForm(FlaskForm):
     form_title = '计算器'
-    calculator_string = StringField('算式', validators=[DataRequired()])
-    calculator_submit = SubmitField('提交查看结果')
+    calculator_str = StringField('算式', validators=[DataRequired()])
+    submit9 = SubmitField('提交')
 
 
 class DownloadForm(FlaskForm):
