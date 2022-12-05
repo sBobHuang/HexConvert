@@ -6,8 +6,6 @@ from datetime import timedelta
 from flask import Flask
 from flask_bootstrap import Bootstrap, WebCDN, ConditionalCDN, BOOTSTRAP_VERSION, \
     JQUERY_VERSION, HTML5SHIV_VERSION, RESPONDJS_VERSION
-from flask_moment import Moment
-from flask_sqlalchemy import SQLAlchemy
 from config import config
 from flask_login import LoginManager
 
@@ -28,7 +26,6 @@ def create_app(config_name):
     # 使用默认的flask配置
     bootstrap.init_app(app)
     change_cdn_domestic(app)
-    moment.init_app(app)
 
     db.init_app(app)
     login_manage.init_app(app)
