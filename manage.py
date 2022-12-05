@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 
-from app import create_app, db
+from app import create_app
 from flask_script import Manager, Shell
 from flask_migrate import MigrateCommand, Migrate
 from flask_cors import CORS
