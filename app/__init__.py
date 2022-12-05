@@ -7,16 +7,9 @@ from flask import Flask
 from flask_bootstrap import Bootstrap, WebCDN, ConditionalCDN, BOOTSTRAP_VERSION, \
     JQUERY_VERSION, HTML5SHIV_VERSION, RESPONDJS_VERSION
 from config import config
-from flask_login import LoginManager
 
 bootstrap = Bootstrap()
-moment = Moment()
-db = SQLAlchemy()
 
-# 设置验证函数
-login_manage = LoginManager()
-login_manage.session_protection = 'strong'
-login_manage.login_view = 'auth.login'
 
 
 def create_app(config_name):
@@ -27,14 +20,9 @@ def create_app(config_name):
     bootstrap.init_app(app)
     change_cdn_domestic(app)
 
-    db.init_app(app)
-    login_manage.init_app(app)
-    # 配置各个实例对象
-
     from .main import main as main_blueprint
     app.register_blueprint(main_blueprint)
     # 倒入蓝图
-
 
     return app
 
