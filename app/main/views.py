@@ -16,8 +16,6 @@ def index():
     if form1.submit1.data and form1.validate_on_submit():
         flash(hexStr2BinStr(form1.hex_str.data))
     form2 = Dec2BinStrForm()
-    if form2.bits_of_digit.data is None:
-        form2.bits_of_digit.data = 8
     if form2.submit2.data and form2.validate_on_submit():
         flash(dec2BinStr(form2.dec.data, form2.bits_of_digit.data))
     form3 = BinStr2DecForm()
@@ -30,8 +28,6 @@ def index():
     if form5.submit5.data and form5.validate_on_submit():
         flash(complementBinStr2Dec(form5.bin_str.data))
     form6 = Dec2ComplementBinStrForm()
-    if form6.bits_of_digit.data is None:
-        form6.bits_of_digit.data = 16
     if form6.submit6.data and form6.validate_on_submit():
         flash(Dec2ComplementBinStr(form6.dec.data, form6.bits_of_digit.data))
     form7 = StrLengthForm()
@@ -42,7 +38,9 @@ def index():
         flash(BinStr2HexStr(form8.bin_str.data))
     form9 = CalculatorForm()
     if form9.submit9.data and form9.validate_on_submit():
-        flash(cal(form9.calculator_str.data))
-    forms = [form2, form6, form5, form3, form8, form1, form4, form7, form9]
+        flash(cal(form9.calculator_str.data, form9.is_ans_hex_format.data))
+    form10 = Dec2HexStrForm()
+    if form10.submit10.data and form10.validate_on_submit():
+        flash(Dec2HexStr(form10.dec.data))
+    forms = [form10, form2, form6, form9, form5, form3, form8, form1, form4, form7]
     return render_template('index.html', forms=forms)
-

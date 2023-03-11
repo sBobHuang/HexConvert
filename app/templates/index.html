@@ -5,7 +5,7 @@
 
 {% block page_content %}
     {% for form in forms %}
-        <div class="col-md-3 col-sm-12 col-xs-12" style="height: 30vh;min-height:260px;">
+        <div class="col-md-3 col-sm-12 col-xs-12" style="height: 25vh;min-height:235px;">
         <h4>{{ form.form_title }}</h4>
         {{ wtf.quick_form(form) }}
         </div>

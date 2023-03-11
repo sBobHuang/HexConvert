@@ -54,18 +54,19 @@ def BinStr2HexStr(bin_str):
     bin_str = bin_str.replace(' ', '')
     # bin_str = bin_str.split(' ')[0]
     n = int(bin_str, 2)
-    return format(n, f'0{(len(bin_str)+3)//4}x')
+    return format(n, f'0{(len(bin_str)+3)//4}X')
 
 
 def Dec2HexStr(n):
     # bin_str = bin_str.split(' ')[0]
-    return format(n, 'x')
+    return format(n, 'X')
 
 
-def cal(calculator_str):
+def cal(calculator_str, is_ans_hex_format):
     try:
         import random
         import math
-        return eval(calculator_str)
+        ans = eval(calculator_str)
+        return "0x" + format(ans, 'X') if is_ans_hex_format else ans
     except:
         return '您输入的有误'
